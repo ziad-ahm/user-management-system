@@ -1,35 +1,152 @@
-# Getting Started
+# 🧑‍💼 User Management System
 
-### Reference Documentation
+A simple **User Management Dashboard** built using **Spring Boot** and **JavaScript (Fetch API)**.
+The system provides authentication and role-based authorization with full CRUD operations.
 
-For further reference, please consider the following sections:
+---
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/4.0.6/maven-plugin)
-* [Create an OCI image](https://docs.spring.io/spring-boot/4.0.6/maven-plugin/build-image.html)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/4.0.6/reference/data/sql.html#data.sql.jpa-and-spring-data)
-* [Spring Boot DevTools](https://docs.spring.io/spring-boot/4.0.6/reference/using/devtools.html)
-* [Spring Security](https://docs.spring.io/spring-boot/4.0.6/reference/web/spring-security.html)
-* [Spring Web](https://docs.spring.io/spring-boot/4.0.6/reference/web/servlet.html)
+## 🚀 Features
 
-### Guides
+* 🔐 JWT Authentication & Authorization
+* 👥 Role-Based Access Control (ADMIN, ACCOUNTANT, USER)
+* 📡 RESTful APIs
+* 🧑‍💻 Admin Dashboard
+* 🔄 CRUD Operations (Create, Read, Update, Delete)
+* 🌐 Frontend integration using Fetch API
 
-The following guides illustrate how to use some features concretely:
+---
 
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
-* [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
-* [Securing a Web Application](https://spring.io/guides/gs/securing-web/)
-* [Spring Boot and OAuth2](https://spring.io/guides/tutorials/spring-boot-oauth2/)
-* [Authenticating a User with LDAP](https://spring.io/guides/gs/authenticating-ldap/)
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
+## 🛠️ Tech Stack
 
-### Maven Parent overrides
+* Backend: Spring Boot
+* Security: Spring Security + JWT
+* Database: MySQL
+* Frontend: HTML, CSS, JavaScript (Fetch API)
 
-Due to Maven's design, elements are inherited from the parent POM to the project POM.
-While most of the inheritance is fine, it also inherits unwanted elements like `<license>` and `<developers>` from the
-parent.
-To prevent this, the project POM contains empty overrides for these elements.
-If you manually switch to a different parent and actually want the inheritance, you need to remove those overrides.
+---
+
+## 📂 Project Structure
+
+* **Controller** → Handles HTTP requests
+* **Service** → Business logic
+* **Repository** → Database access
+* **Security** → JWT & authentication
+
+---
+
+## 📡 API Endpoints
+
+### 🔐 Authentication
+
+* POST `/api/auth/login` → Login and get JWT token
+
+---
+
+### 👤 Users
+
+* POST `/api/users` → Create new user (ADMIN)
+* GET `/api/users` → Get all users (ADMIN, ACCOUNTANT)
+* GET `/api/users/{id}` → Get user by ID
+* PUT `/api/users/{id}` → Update user
+* DELETE `/api/users/{id}` → Delete user (ADMIN)
+
+---
+
+## 🔑 Example Request (Login)
+
+POST `/api/auth/login`
+
+```json
+{
+  "username": "admin",
+  "password": "1234"
+}
+```
+
+### ✅ Response
+
+```json
+{
+  "token": "your_jwt_token"
+}
+```
+
+---
+
+## 🔒 Authorization
+
+All protected endpoints require JWT token in header:
+
+```
+Authorization: Bearer <your_token>
+```
+
+---
+
+## 🔐 Roles & Permissions
+
+### 👑 ADMIN
+
+* Full access
+* Manage all users (CRUD)
+
+### 💼 ACCOUNTANT
+
+* View users
+* Limited access
+
+### 👤 USER
+
+* Basic access
+* Limited permissions
+
+---
+
+## ⚙️ Setup & Run
+
+1. Clone the repository:
+
+```
+git clone https://github.com/your-username/user-management-system.git
+```
+
+2. Open the project in your IDE
+
+3. Run the application:
+
+```
+UserManagementSystemApplication.java
+```
+
+4. Access the app:
+
+```
+http://localhost:8080
+```
+
+---
+
+## 🧪 Testing
+
+You can test the APIs using tools like Postman.
+
+---
+
+## 📸 Notes
+
+This is a simple project created for learning:
+
+* Spring Boot
+* Spring Security
+* JWT Authentication
+* REST APIs
+
+---
+
+## 🔥 Future Improvements
+
+* Pagination & Search
+* UI Enhancements
+* Deploy to cloud (e.g., AWS)
+* Swagger API Documentation
 
