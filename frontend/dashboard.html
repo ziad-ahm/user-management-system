@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User Management Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h1>User Management Dashboard</h1>
+    <button class="logout">Logout</button>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+
+    <div class="card">
+        <h4>Total Users</h4>
+        <h3 id="totalUsers">0</h3>
+    </div>
+
+    <div class="card">
+        <h4>Admins</h4>
+        <h3 id="admins">0</h3>
+    </div>
+
+    <div class="card">
+        <h4>Accountants</h4>
+        <h3 id="accountants">0</h3>
+    </div>
+
+    <div class="card">
+        <h4>Total Salary</h4>
+        <h3 id="salary">0</h3>
+    </div>
+
+</div>
+
+<!-- TABLE -->
+<div class="container">
+
+    <div class="card table-card">
+
+        <div class="table-header">
+            <h2>All Users</h2>
+
+            <div class="actions">
+                <button onclick="getUsers()">Refresh</button>
+                <button onclick="openCreateUserModal()">Add User</button>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Full Name</th>
+                <th>Job</th>
+                <th>Salary</th>
+                <th>Role</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+
+            <tbody id="usersTable"></tbody>
+        </table>
+
+    </div>
+
+</div>
+
+<!-- MODAL -->
+<div id="userModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <h2>User Form</h2>
+
+        <input id="firstName" placeholder="First Name">
+        <input id="lastName" placeholder="Last Name">
+
+        <input id="email" placeholder="Email">
+
+        <input id="username" placeholder="Username">
+        <input id="password" placeholder="Password">
+
+        <input id="jobTitle" placeholder="Job Title">
+        <input id="salary" placeholder="Salary">
+
+        <select id="role">
+            <option value="USER">USER</option>
+            <option value="ADMIN">ADMIN</option>
+            <option value="ACCOUNTANT">ACCOUNTANT</option>
+        </select>
+
+        <button onclick="createUser()">Save</button>
+
+    </div>
+
+</div>
+
+<script src="index.js"></script>
+
+</body>
+</html>

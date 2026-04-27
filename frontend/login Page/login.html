@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg: linear-gradient(135deg, #1230b3, #5950a7);
+      --card: #ffffff;
+      --text: #333;
+      --input: #f1f1f1;
+      --primary: #667eea;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --card: #1e1e1e;
+      --text: #eee;
+      --input: #2a2a2a;
+      --primary: #8b9cff;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      transition: 0.3s;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: var(--bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      background: var(--card);
+      padding: 30px;
+      border-radius: 15px;
+      width: 340px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      text-align: center;
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h2 {
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 15px;
+    }
+
+    .input-group i {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #888;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px 10px 10px 35px;
+      border-radius: 8px;
+      border: none;
+      background: var(--input);
+      outline: none;
+      color: var(--text);
+    }
+
+    .input-group input:focus {
+      box-shadow: 0 0 0 2px var(--primary);
+      transform: scale(1.02);
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: var(--primary);
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .login-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .toggle-dark {
+      margin-top: 15px;
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .footer {
+      margin-top: 15px;
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    .footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="login-container">
+    <h2>Login</h2>
+
+    <form>
+      <div class="input-group">
+        <i class="fa fa-user"></i>
+        <input type="text" placeholder="Username" required>
+      </div>
+
+      <div class="input-group">
+        <i class="fa fa-lock"></i>
+        <input type="password" placeholder="Password" required>
+      </div>
+
+      <button class="login-btn">Login</button>
+    </form>
+
+    <div class="toggle-dark" onclick="toggleDarkMode()">
+      🌙 Toggle Dark Mode
+    </div>
+
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+
+<script src="login.js"></script>
+
+</body>
+</html>
