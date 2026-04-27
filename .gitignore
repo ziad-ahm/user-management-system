@@ -1,7 +1,4 @@
-# Maven / Build
-target/
-!**/src/main/**/target/
-!**/src/test/**/target/
+
 
 # Maven Wrapper
 .mvn/wrapper/maven-wrapper.jar
